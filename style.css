@@ -2,15 +2,76 @@ html,
 body {
     padding: 0;
     margin: 0;
+    background-color: coral;
 }
 
 header {
+    color: #fff;
+    padding-top: 1rem;
     display: flex;
     justify-content: center;
 }
 
-h2,
-h4 {
+h2 {
+    padding: 2rem;
+    border: 2px solid #000;
+    text-transform: uppercase;
+
+}
+
+.container {
     display: flex;
     justify-content: center;
+    gap: 3rem;
+}
+
+h3 {
+    color: #000;
+}
+
+#time,
+#day,
+#month {
+    font-size: x-large;
+    color: #fff;
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: #000
+    }
+
+    h2 {
+        padding: 2rem;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        background-color: cornflowerblue;
+    }
+
+    h2 {
+        padding: 2rem;
+        border: 2px solid darkblue;
+        text-transform: uppercase;
+    }
+
 }

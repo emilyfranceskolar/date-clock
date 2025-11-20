@@ -16,14 +16,14 @@ function renderTime() {
   const time = new Date();
 
   const showTime = time.toLocaleTimeString("sv-SE", { timeStyle: "medium" });
-  document.getElementById("time").textContent = showTime;
+  document.getElementById("time").textContent = `Tiden - ${showTime}`;
 }
 
 function renderDay() {
   const day = new Date();
   const showDay = getWeekday(day.getDay());
 
-  document.getElementById("day").textContent = showDay;
+  document.getElementById("day").textContent = `Dagen - ${showDay}`;
 }
 
 function getWeekday(showDay) {
@@ -50,7 +50,7 @@ function renderMonth() {
   const month = new Date();
   const showMonth = getMonth(month.getMonth());
 
-  document.getElementById("month").textContent = showMonth;
+  document.getElementById("month").textContent = `Månaden - ${showMonth}`;
 }
 
 function getMonth(showMonth) {
