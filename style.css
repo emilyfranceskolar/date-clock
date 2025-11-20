@@ -9,7 +9,8 @@ header {
     justify-content: center;
 }
 
-div {
+h2,
+h4 {
     display: flex;
     justify-content: center;
 }

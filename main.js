@@ -1,24 +1,33 @@
 window.addEventListener("DOMContentLoaded", main);
+const container = document.querySelector("div");
 
 function main() {
   renderClock();
   setInterval(renderClock, 1000);
 }
 
-function renderTime() {
-  const date = new Date();
+function renderClock() {
+  renderTime();
+  renderDay();
+  renderMonth();
+}
 
-  const showTime = date.toLocaleTimeString("sv-SE", { timeStyle: "short" });
+function renderTime() {
+  const time = new Date();
+
+  const showTime = time.toLocaleTimeString("sv-SE", { timeStyle: "medium" });
   document.getElementById("time").textContent = showTime;
 }
 
-function renderClock() {
-  getWeekday();
-  renderTime();
+function renderDay() {
+  const day = new Date();
+  const showDay = getWeekday(day.getDay());
+
+  document.getElementById("day").textContent = showDay;
 }
 
-function getWeekday(weekdayIndex) {
-  switch (weekdayIndex) {
+function getWeekday(showDay) {
+  switch (showDay) {
     case 1:
       return "Måndag";
     case 2:
@@ -34,9 +43,47 @@ function getWeekday(weekdayIndex) {
     case 7:
       return "Söndag";
   }
+  renderDay();
 }
 
-// alt använda en array
+function renderMonth() {
+  const month = new Date();
+  const showMonth = getMonth(month.getMonth());
+
+  document.getElementById("month").textContent = showMonth;
+}
+
+function getMonth(showMonth) {
+  switch (showMonth) {
+    case 1:
+      return "Januari";
+    case 2:
+      return "Februari";
+    case 3:
+      return "Mars";
+    case 4:
+      return "April";
+    case 5:
+      return "Maj";
+    case 6:
+      return "Juni";
+    case 7:
+      return "Juli";
+    case 8:
+      return "Augusti";
+    case 9:
+      return "September";
+    case 10:
+      return "Oktober";
+    case 11:
+      return "November";
+    case 12:
+      return "December";
+  }
+  renderMonth();
+}
+
+/* // alt använda en array
 function getMonthName(monthIndex) {
   const months = [
     "Januari",
@@ -54,6 +101,4 @@ function getMonthName(monthIndex) {
   ];
   return months[monthIndex];
 }
-
-// const showDay = `${day}`;
-// document.getElementById("day").textContent = showDay;
+ */
